@@ -1,1 +1,3 @@
-# semver-practice
+# SemVer Practice Project
+
+Простой проект для демонстрации семантического версионирования.
