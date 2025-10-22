@@ -1,5 +1,10 @@
-def hello_world():
-    return "Hello, Wolrd!"
+def hello_world(name="World"):
+    if not name:
+        name = "World"
+    return f"Hello, {name}!"
 
-if __name__ == "__main__":
-    print(hello_world())
+def hello_multiple(*names):
+    if not names:
+        return "Hello, World!"
+    greetings = [f"Hello, {name}!" for name in names]
+    return "\n".join(greetings)
