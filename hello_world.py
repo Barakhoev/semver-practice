@@ -1,20 +1,16 @@
 import datetime
 
-def hello_world(name="World"):
+def hello_world(name="World", language="en"):
     if not name:
         name = "World"
-    return f"Hello, {name}!"
+    
+    greetings = {
+        "en": f"Hello, {name}!",
+        "es": f"¡Hola, {name}!",
+        "fr": f"Bonjour, {name}!",
+        "de": f"Hallo, {name}!"
+    }
+    
+    return greetings.get(language, greetings["en"])
 
-def hello_multiple(*names):
-    if not names:
-        return "Hello, World!"
-    greetings = [f"Hello, {name}!" for name in names]
-    return "\n".join(greetings)
-
-def hello_with_time(name="World"):
-    current_time = datetime.datetime.now().strftime("%H:%M")
-    return f"Hello, {name}! Current time is {current_time}"
-
-if __name__ == "__main__":
-    print(hello_world())
-    print(hello_with_time("Alice"))
+# ... остальные функции
